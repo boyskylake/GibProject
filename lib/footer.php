@@ -1,40 +1,3 @@
-<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<i class="" aria-hidden="true"></i>เกี่ยวกับเรา
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-				</div>
-				<section>
-					<div class="modal-body">
-						<!-- <img src="../images/s1.jpg" alt=" " class="img-responsive" /> -->
-						<p>ข้อมูล</p>
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-
-<!-- <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <i class="fa fa-pagelines" aria-hidden="true"></i>Growing
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <section>
-                    <div class="modal-body">
-                        <img src="images/s1.jpg" alt=" " class="img-responsive" />
-                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
-                            vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
-                            <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
-								esse quam nihil molestiae consequatur.</i></p>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div> -->
-<!-- footer start here --> 
 	<div class="footer-agile">
 		<div class="container">
 			<div class="footer-agileinfo"> 
@@ -76,6 +39,7 @@
 		</div>
 	</div>
 <!-- //footer end here -->  
+
 	<!-- FlexSlider --> 
 	<script defer src="../js/jquery.flexslider.js"></script>
 		<script type="text/javascript">
@@ -89,6 +53,7 @@
 			});
 		</script>
 	<!-- End-slider-script --> 
+
 <!-- Flexslider-js for-testimonials -->
 <script type="text/javascript">
 							$(window).load(function() {
@@ -134,6 +99,7 @@
 			});
 		</script>
 	<!-- //end-smooth-scrolling   -->	
+	
 	<!-- smooth-scrolling-of-move-up -->
 	<script type="text/javascript">
 		$(document).ready(function() {

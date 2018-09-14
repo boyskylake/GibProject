@@ -2,7 +2,7 @@
 	class Control{
 		
 		public function content($v=''){
-			if(empty($v) || $v == "Index"){
+			if(empty($v) || $v == "Index" || $v == "account"){
 				return require_once ('account/summary.php');
 			}else if($v == "CreateBuy"){
 				return require_once ('account/buy.php');

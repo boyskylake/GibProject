@@ -5,6 +5,8 @@
 	class DB{
 		private $charset = "UTF8";
 		private $rs;
+		private $fatnor;
+		private $_fetch_assoc;
 		private $_fetch_array = array();
 	
 		public function __construct(){
@@ -30,6 +32,14 @@
 				}
 				return $this->_fetch_array;
 			}
+		}
+
+		public function fetch_arraynor(){
+			$this->fatnor = mysql_fetch_array($this->rs);
+		}
+
+		public function fetch_assoc(){
+			return mysql_fetch_assoc($this->rs);
 		}
 	}
 ?>

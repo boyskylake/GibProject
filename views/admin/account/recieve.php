@@ -10,14 +10,14 @@
   			<div align="right">
 	  			<button type="submit" class="btn btn-success btn-lg">
 	  				<span class="glyphicon glyphicon-floppy-disk"></span>
-	  				&nbsp;Save
+	  				&nbsp;บันทึก
 	  			</button>
 	  			<hr></hr>
   			</div>
   			
 	  		<div class="alert alert-info">
 				<div class="form-group">
-					<label class="col-sm-2 control-label" for="date">DATE</label>
+					<label class="col-sm-2 control-label" for="date">เวลา</label>
 		    		<div class="col-xs-4">
 		    			<?php $today = getdate(); ?>
 		    			<input value="<?php echo date("Y-m-d"); ?>" name="date" placeholder="ปปปป-ดด-วว" type="text" class="form-control input-lg"/>
@@ -25,17 +25,17 @@
 	  			</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label" for="list">FROM</label>
+					<label class="col-sm-2 control-label" for="list">รายการ</label>
 		  			<div class="col-xs-6">
 		    			<input name="from" type="text" class="form-control input-lg"/>
 		  			</div>
 		  		</div>
 	  			<div class="form-group">
-	  				<label class="col-sm-2 control-label" for="money">MONEY</label>
+	  				<label class="col-sm-2 control-label" for="money">ราคา</label>
 	  				<div class="col-xs-2">
 	    				<input name="money" type="text" class="form-control input-lg"/>
 	    			</div>
-	    			<label class="control-label" for="money">BATH.</label>
+	    			<label class="control-label" for="money">บาท.</label>
 	  			</div>
 	  			<span id="mySpan"></span>
 	  		</div>

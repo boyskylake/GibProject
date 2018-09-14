@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2018 at 08:00 PM
+-- Generation Time: Sep 14, 2018 at 11:54 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -21,6 +21,84 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_pigfarm`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activity`
+--
+
+CREATE TABLE `activity` (
+  `id_act` int(7) NOT NULL,
+  `name_act` varchar(255) NOT NULL,
+  `date_act` varchar(50) NOT NULL,
+  `detail_act` text NOT NULL,
+  `id_photo` int(7) NOT NULL,
+  `date_in` varchar(255) NOT NULL,
+  `status_act` int(7) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `activity`
+--
+
+INSERT INTO `activity` (`id_act`, `name_act`, `date_act`, `detail_act`, `id_photo`, `date_in`, `status_act`) VALUES
+(1, 'teset1', '2018-08-10', 'sadasdasd', 1, '08-08-2018', 1),
+(23, 'act1', '2018-09-22', 'act1 detail', 23, '13-09-2018', 1),
+(3, 'test2', '2018-08-25   ', 'fsadfasdfadsfasdfasdfsadf\r\nasdfasdfasdfasdfasdf\r\nasdfsadfsaddfsadfasdfs\r\nsadsad\r\nasdfasfsafasf\r\nasdasdsad', 3, '08-08-2018', 1),
+(4, 'teset4', '2018-08-08', 'dasdasdasd', 4, '08-08-2018', 1),
+(24, 'act2', '2018-09-29', 'act2 detail', 24, '13-09-2018', 1),
+(25, 'act3', '2018-09-28', 'act3', 25, '13-09-2018', 1),
+(26, 'act4', '2018-09-21', 'act4', 29, '13-09-2018', 1),
+(27, 'act5', '2018-09-21', 'act5', 28, '13-09-2018', 1),
+(28, 'act6', '2018-09-29', 'act6', 27, '13-09-2018', 1),
+(29, 'act7', '2018-09-27', 'act7', 26, '13-09-2018', 1),
+(30, 'act8', '2018-09-27', 'ngdbcxv', 30, '13-09-2018', 1),
+(31, 'act9', '2018-09-27', 'efsadfdsfsdaf', 32, '13-09-2018', 1),
+(32, 'act10', '2018-09-28', 'regdfgfdgsdf', 31, '13-09-2018', 0),
+(19, 'ewfefsdfsadfasdfsadf', '2018-09-27', 'asdfsadfsadfasdfasdfasdfasdf', 22, '12-09-2018', 1),
+(20, 'ewfefsdfsadfasdfsadf2', '2018-09-27', 'asdfsadfsadfasdfasdfasdfasdf', 14, '12-09-2018', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `act_photo`
+--
+
+CREATE TABLE `act_photo` (
+  `id_photo` int(7) NOT NULL,
+  `name_photo` varchar(255) NOT NULL,
+  `id_act` int(7) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `act_photo`
+--
+
+INSERT INTO `act_photo` (`id_photo`, `name_photo`, `id_act`) VALUES
+(1, '36935865_205258070176892_1730869337796902912_n.jpg', 1),
+(22, '36935865_205258070176892_1730869337796902912_n.jpg', 19),
+(3, 'baner.jpg', 3),
+(4, 'DSC_0155_Cover.jpg', 4),
+(11, 'Screenshot (1).png', 20),
+(12, 'Screenshot (2).png', 20),
+(13, 'Screenshot (1).png', 20),
+(14, 'Capture.PNG', 20),
+(15, '36935865_205258070176892_1730869337796902912_n.jpg', 20),
+(21, '39454467_311459239429517_2277486711707533312_n.jpg', 19),
+(18, '39454467_311459239429517_2277486711707533312_n.jpg', 20),
+(19, '41331793_1894394330867297_392523297473953792_n.jpg', 20),
+(20, '41331793_1894394330867297_392523297473953792_n.jpg', 20),
+(23, 'Learn-coding-online.jpeg', 23),
+(24, 'line api.png', 24),
+(25, '37293500_2121795891398520_2020020138325049344_n.jpg', 25),
+(26, '39101837_1811393882243017_1506462755484336128_o.jpg', 29),
+(27, '36935865_205258070176892_1730869337796902912_n.jpg', 28),
+(28, 'baner.jpg', 27),
+(29, 'img_23744_tmp_5aPPR_600x600.jpg', 26),
+(30, 'Program-Code-Feature-Image.jpg', 30),
+(31, 'img_23744_tmp_5aPPR_600x600.jpg', 32),
+(32, '39101837_1811393882243017_1506462755484336128_o.jpg', 31);
 
 -- --------------------------------------------------------
 
@@ -151,6 +229,75 @@ INSERT INTO `member` (`UserID`, `Username`, `Password`, `Name`, `Status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pf_pig`
+--
+
+CREATE TABLE `pf_pig` (
+  `Id` int(11) NOT NULL,
+  `No` int(11) NOT NULL,
+  `id_stall` int(11) NOT NULL,
+  `bdate` date NOT NULL,
+  `vaccine` int(11) NOT NULL,
+  `id_vac` int(11) NOT NULL,
+  `typepig` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `status` enum('อยู่','ขายแล้ว') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'อยู่'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pf_pig`
+--
+
+INSERT INTO `pf_pig` (`Id`, `No`, `id_stall`, `bdate`, `vaccine`, `id_vac`, `typepig`, `status`) VALUES
+(1, 1, 2, '2018-09-14', 0, 0, 'แม่พัน', 'ขายแล้ว'),
+(2, 2, 1, '2018-09-29', 0, 0, 'พ่อพัน2', 'ขายแล้ว'),
+(4, 11, 1, '2018-09-21', 3, 0, 'แม่พัน2', 'อยู่'),
+(5, 123, 1, '2018-09-13', 0, 0, 'พ่อพัน2', 'อยู่');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pf_stall`
+--
+
+CREATE TABLE `pf_stall` (
+  `Id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pf_stall`
+--
+
+INSERT INTO `pf_stall` (`Id`, `name`, `amount`) VALUES
+(1, 'คอก2', 4),
+(2, 'คอก1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pf_vaccine`
+--
+
+CREATE TABLE `pf_vaccine` (
+  `Id` int(11) NOT NULL,
+  `id_pig` int(11) NOT NULL,
+  `vaccine` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pf_vaccine`
+--
+
+INSERT INTO `pf_vaccine` (`Id`, `id_pig`, `vaccine`, `date`) VALUES
+(1, 4, 'wwwwwwww', '2018-07-31'),
+(2, 4, 'วัคซีน12', '2018-09-27'),
+(3, 4, 'วัคซีนwww', '2018-09-20');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `recieve`
 --
 
@@ -182,11 +329,112 @@ INSERT INTO `recieve` (`id`, `date`, `from`, `r_money`, `created_date`) VALUES
 (14, '2018-08-13', 'ขายยา', 200000, '2018-08-13 09:02:59'),
 (15, '2018-08-13', 'ขายหมู', 600, '2018-08-13 13:10:49'),
 (16, '2018-08-13', 'asdasdsad', 100, '2018-08-13 14:22:01'),
-(17, '2018-08-13', 'ขายหมา', 300, '2018-08-13 14:26:34');
+(17, '2018-08-13', 'ขายหมา', 300, '2018-08-13 14:26:34'),
+(18, '2018-09-10', 'ซื้อขนม', 10, '2018-09-10 05:39:52'),
+(19, '2018-09-10', 'ซื้อม่ราา', 100, '2018-09-10 05:40:26'),
+(20, '2018-09-13', 'ขายสุกรเลขที่ 2', 3000, '2018-09-13 18:30:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `td_about`
+--
+
+CREATE TABLE `td_about` (
+  `Id` int(11) NOT NULL,
+  `Topic` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Description` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `td_about`
+--
+
+INSERT INTO `td_about` (`Id`, `Topic`, `Description`) VALUES
+(1, 'หัวข้อ', 'รายละเอียด'),
+(2, 'หัวข้อ2', 'รายละเอียด2'),
+(3, 'หัวข้อ22', 'ละเอียด//');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `td_contect`
+--
+
+CREATE TABLE `td_contect` (
+  `Id` int(11) NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `message` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `td_contect`
+--
+
+INSERT INTO `td_contect` (`Id`, `name`, `email`, `phone`, `message`) VALUES
+(2, 'นาย อรรถพงษ์ นิมี', 'boyskylab96@gmail.com', '0957195867', 'dasdsaffdgvadvasdvasdv');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `td_service`
+--
+
+CREATE TABLE `td_service` (
+  `Id` int(11) NOT NULL,
+  `Topic` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Description` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `td_service`
+--
+
+INSERT INTO `td_service` (`Id`, `Topic`, `Description`) VALUES
+(3, 'service', 'detail service');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `td_team`
+--
+
+CREATE TABLE `td_team` (
+  `Id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `position` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `facebook` text COLLATE utf8_unicode_ci NOT NULL,
+  `twitter` text COLLATE utf8_unicode_ci NOT NULL,
+  `rss` text COLLATE utf8_unicode_ci NOT NULL,
+  `pic_file` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `td_team`
+--
+
+INSERT INTO `td_team` (`Id`, `name`, `position`, `facebook`, `twitter`, `rss`, `pic_file`) VALUES
+(2, 'name122', 'position122', 'facebook22', 'twitter22', 'rss22', '37293500_2121795891398520_2020020138325049344_n.jpg'),
+(3, 'name3222', 'position3222', '', '', '', 'Capture.PNG'),
+(4, 'name sername', 'position', 'https://www.facebook.com', 'https://www.twitter.com', '', 'DSC_0155_Cover.jpg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activity`
+--
+ALTER TABLE `activity`
+  ADD PRIMARY KEY (`id_act`);
+
+--
+-- Indexes for table `act_photo`
+--
+ALTER TABLE `act_photo`
+  ADD PRIMARY KEY (`id_photo`);
 
 --
 -- Indexes for table `buy`
@@ -202,14 +450,68 @@ ALTER TABLE `member`
   ADD UNIQUE KEY `Username` (`Username`);
 
 --
+-- Indexes for table `pf_pig`
+--
+ALTER TABLE `pf_pig`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `pf_stall`
+--
+ALTER TABLE `pf_stall`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `pf_vaccine`
+--
+ALTER TABLE `pf_vaccine`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `recieve`
 --
 ALTER TABLE `recieve`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `td_about`
+--
+ALTER TABLE `td_about`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `td_contect`
+--
+ALTER TABLE `td_contect`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `td_service`
+--
+ALTER TABLE `td_service`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `td_team`
+--
+ALTER TABLE `td_team`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `activity`
+--
+ALTER TABLE `activity`
+  MODIFY `id_act` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `act_photo`
+--
+ALTER TABLE `act_photo`
+  MODIFY `id_photo` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `buy`
@@ -224,10 +526,52 @@ ALTER TABLE `member`
   MODIFY `UserID` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `pf_pig`
+--
+ALTER TABLE `pf_pig`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `pf_stall`
+--
+ALTER TABLE `pf_stall`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `pf_vaccine`
+--
+ALTER TABLE `pf_vaccine`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `recieve`
 --
 ALTER TABLE `recieve`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `td_about`
+--
+ALTER TABLE `td_about`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `td_contect`
+--
+ALTER TABLE `td_contect`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `td_service`
+--
+ALTER TABLE `td_service`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `td_team`
+--
+ALTER TABLE `td_team`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

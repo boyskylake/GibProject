@@ -105,8 +105,10 @@
                     <?php 
                     if (isset($_GET['v'])) {
                         Control::content($_GET['v']);
-                    }
+                    }else{
+                        
                     Control::content($_GET['v'] = 'Index'); 
+                    }
                     ?>
                 </div>
             </div>

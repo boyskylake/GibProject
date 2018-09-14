@@ -2,6 +2,11 @@
     session_unset();
     session_start();
     $_SESSION['pages'] = $_SERVER['SCRIPT_NAME'];
+
+    require_once ('../lib/DB.php');
+    $db=new DB();
+    $db2=new DB();
+    $db3=new DB();
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,102 +37,109 @@
 				<!-- <p class="sub two">Morbi in dui pretium, finibus sapien vel.</p> -->
 			</div>
 				<div class="w3ls_portfolio_grids">
-					<div class="col-md-4 agileinfo_portfolio_grid">
+					<?php 
+						$sql = "SELECT * FROM `activity` WHERE `status_act`= '1'";
+					      $db->query($sql);
+					      $Num_Rows = $db->num_rows();
+
+						    $Per_Page = 3;
+						    if (isset($_GET["Page"])) {
+						      $Page = $_GET["Page"];
+						    }
+
+						    if(!isset($_GET["Page"]))
+						    {
+						      $Page=1;
+						    }
+
+						    $Prev_Page = $Page-1;
+						    $Next_Page = $Page+1;
+
+						    $Page_Start = (($Per_Page*$Page)-$Per_Page);
+						    if($Num_Rows<=$Per_Page)
+						    {
+						      $Num_Pages =1;
+						    }
+						    else if(($Num_Rows % $Per_Page)==0)
+						    {
+						      $Num_Pages =($Num_Rows/$Per_Page) ;
+						    }
+						    else
+						    {
+						      $Num_Pages =($Num_Rows/$Per_Page)+1;
+						      $Num_Pages = (int)$Num_Pages;
+						    }
+
+							$sql.=" order  by id_act desc";
+						    $db3->query($sql);
+						    
+						    echo "<div class='col-md-4 agileinfo_portfolio_grid'>";
+						   $intRows = 0;
+						   foreach ($db3->fetch_array() as $rs) {
+						   	$intRows++;
+						 ?>
 						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g1.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
+							<a href="view_act.php?id_act=<?php echo $rs['id_act']; ?>" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
 								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
 									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
+										<h3><?php echo $rs['name_act']; ?></h3>
 									</div>
-									<img src="images/g1.jpg" alt=" " class="img-responsive" />
+									<?php 
+										$strSQL = "SELECT * FROM act_photo where id_photo='".$rs['id_photo']."' ";
+			                            $db2->query($strSQL);
+			                            $f1 = $db2->fetch_assoc();
+			                            $photo = $f1['name_photo'];
+									 ?>
+									<img src="admin/activity/myphoto/<?php echo $photo; ?>" alt="" class="img-responsive" />
 								</div>
 							</a>
 						</div>
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g2.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g2.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g3.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g3.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4 agileinfo_portfolio_grid">
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g4.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g4.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g5.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g5.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g6.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g6.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-4 agileinfo_portfolio_grid">
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g7.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g7.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g8.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g8.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-						<div class="w3_agile_portfolio_grid1">
-							<a href="images/g9.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Industry">
-								<div class="agileits_portfolio_sub_grid agileits_w3layouts_team_grid">	
-									<div class="w3layouts_port_head">
-										<h3>Growing</h3>
-									</div>
-									<img src="images/g9.jpg" alt=" " class="img-responsive" />
-								</div>
-							</a>
-						</div>
-					</div>
+						<?php
+							if(($intRows)%3==0)
+						      {
+						        echo"</div>";
+						        
+						        echo "<div class='col-md-4 agileinfo_portfolio_grid'>";
+
+						        // $intRows = 0;
+						      } 
+						      // echo "</div>";
+						}
+						 ?>
+						<!-- </div> -->
+						<?php
+							// echo "<br>";
+		    	// 			echo "<div align='center'>";
+						 //    if($Prev_Page)
+						 //    {
+						 //      echo "";
+						 //      echo " <a href='$_SERVER[SCRIPT_NAME]?Page=$Prev_Page' title='กลับ'><< Back</a> ";
+						 //    }
+
+						 //    for($i=1; $i<=$Num_Pages; $i++){
+						 //      if($i != $Page)
+						 //      {
+						 //          echo "";
+						 //        echo "[ <a href='$_SERVER[SCRIPT_NAME]?Page=$i' >$i</a> ]";
+						 //      }
+						 //      else
+						 //      {
+						 //          echo "";
+						 //        echo "<b> หน้า $i </b>";
+						 //      }
+						 //    }
+						 //    if($Page!=$Num_Pages)
+						 //    {
+						 //      echo "";
+						 //      echo " <a href ='$_SERVER[SCRIPT_NAME]?Page=$Next_Page' title='ถัดไป'>Next>></a> ";
+							// }
+						 //    echo "</div>";
+					    ?>
+
+						
+					
+
+					
 				<div class="clearfix"> </div>
 			</div>
 		</div>

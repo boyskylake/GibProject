@@ -31,5 +31,12 @@
 				return $this->_fetch_array;
 			}
 		}
+
+		public function fetch_assoc(){
+			return mysql_fetch_assoc($this->rs);
+		}
+		public function mssql_fetch_array(){
+			return mysql_fetch_array($this->rs);
+		}
 	}
 ?>

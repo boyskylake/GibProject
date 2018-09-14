@@ -2,6 +2,11 @@
     session_unset();
     session_start();
     $_SESSION['pages'] = $_SERVER['SCRIPT_NAME'];
+
+    require_once ('../lib/DB.php');
+        $db_service=new DB();
+        $db=new DB();
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,63 +40,33 @@
         <div class="container">
             <div class="w3ls-heading">
                 <h2 class="h-two">เกี่ยวกับเรา</h2>
-                <!-- <p class="sub two">Morbi in dui pretium, finibus sapien vel.</p> -->
             </div>
             <div class="ab-agile">
-                <!-- <div class="col-md-5 ab-pic">
-                    <img src="images/ab1.jpg" alt=" " />
-                </div> -->
-               <!--  <div class="col-md-7 ab-text">
-                    <h4>Aenean quis faucibus libero</h4>
-                    <p>ข้อมูล</p>
-                    <ul class="ab">
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Lorem ipsum dolor sit amet,consectetur adipiscing elit</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Pellentesque eu erat lacus,consectetur adipiscing elit</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Lorem ipsum dolor sit amet,consectetur adipiscing elit</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Lorem ipsum dolor sit amet,consectetur adipiscing elit</a></li>
-                    </ul>
-                </div> -->
                 <div class="clearfix"> </div>
             </div>
             <div class="statements">
+                <?php 
+                    $sql_about="SELECT * FROM `td_about` ORDER BY `Id` DESC";
+                    $db_service->query($sql_about);
+
+                    foreach ($db_service->fetch_array() as $value) {
+
+                 ?>
                 <div class="col-md-12 mission">
-                    <h4>หัวข้อ</h4>
-                    <p>รายละเอียด</p>
-                 <!--    <ul class="ab">
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Lorem ipsum dolor sit amet,consectetur adipiscing elit</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Pellentesque eu erat lacus,consectetur adipiscing elit</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Lorem ipsum dolor sit amet,consectetur adipiscing elit</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Lorem ipsum dolor sit amet,consectetur adipiscing elit</a></li>
-                    </ul> -->
+                    <h4><?php echo $value['Topic'] ?></h4>
+                    <p><?php echo $value['Description'] ?></p>
+                
                 </div>
-                <!-- <div class="col-md-5 facts">
-                    <img src="images/ab2.jpg" alt=" " />
-                </div> -->
+                <?php 
+                    }
+                 ?>
+               
                 <div class="clearfix"> </div>
             </div>
         </div>
     </div>
-    <!-- //main-textgrids -->
-    <!-- different -->
-    <!-- <div class="different">
-        <div class="container">
+  
 
-            <div class="w3l-heading">
-                <h3 class="w3ls_head">Why We are Different</h3>
-            </div>
-
-            <div class="w3agile-different-info">
-                <p>Cras vehicula massa id ipsum venenatis, non convallis libero pellentesque. Sed tristique massa et mattis mattis. Nunc euismod consequat ex, eu tincidunt justo malesuada vitae. Sed auctor diam quis nulla hendrerit porta. Quisque venenatis,
-                    tortor quis tristique congue, lorem lectus elementum augue, in laoreet lorem justo lacinia velit. Phasellus tempus luctus velit, eu fermentum arcu porttitor sit amet. Suspendisse id efficitur sem. Donec laoreet ante at facilisis dictum.
-                    Donec sodales porta orci sed porta. Vivamus est enim, pharetra sit amet placerat ut, eleifend quis purus. Sed elementum tortor erat, placerat rutrum augue facilisis vel. Morbi feugiat tortor erat, nec gravida mauris egestas tincidunt.
-                    Sed vitae dignissim sapien.</p>
-                <div class="w3agile-button">
-                    <a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- //different -->
     <!-- team -->
     <div class="team">
         <div class="container">
@@ -100,63 +75,31 @@
                 <!-- <p class="sub two">Morbi in dui pretium, finibus sapien vel.</p> -->
             </div>
             <div class="agileinfo-team-grids">
+                <?php 
+                    $sql = "SELECT * FROM `td_team` ORDER BY `Id` DESC";
+                    $db->query($sql);
+
+                    foreach ($db->fetch_array() as $result) {
+                 ?>
                 <div class="col-md-3 wthree-team-grid">
-                    <img src="../images/user.png" alt="">
+                    <img src="../images/<?php echo $result['pic_file']; ?>" alt="">
                     <div class="wthree-team-grid-info">
-                        <h4>ชื่อ</h4>
-                        <p>หน้าที่</p>
+                        <h4>ชื่อ <?php echo $result['name']; ?></h4>
+                        <p>ตำแหน่ง : <?php echo $result['position']; ?></p>
                         <div class="team-social-grids">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="<?php echo $result['facebook']; ?>"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="<?php echo $result['twitter']; ?>"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="<?php echo $result['rss']; ?>"><i class="fa fa-rss"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 wthree-team-grid">
-                    <img src="../images/user.png" alt="">
-                    <div class="wthree-team-grid-info">
-                        <h4>ชื่อ</h4>
-                        <p>หน้าที่</p>
-                        <div class="team-social-grids">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 wthree-team-grid">
-                    <img src="../images/user.png" alt="">
-                    <div class="wthree-team-grid-info">
-                        <h4>ชื่อ</h4>
-                        <p>หน้าที่</p>
-                        <div class="team-social-grids">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 wthree-team-grid">
-                    <img src="../images/user.png" alt="">
-                    <div class="wthree-team-grid-info">
-                         <h4>ชื่อ</h4>
-                        <p>หน้าที่</p>
-                        <div class="team-social-grids">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
+               <?php 
+                }
+                ?>
+                
+                <!-- <div class="clearfix"> </div> -->
             </div>
         </div>
     </div>
