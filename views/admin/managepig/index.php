@@ -6,6 +6,7 @@
 	$db1=new DB();
 	$db2=new DB();
 	$db3=new DB();
+	$db4=new DB();
 
 	$sql1 = "SELECT * FROM `pf_stall`";
 	$sql2 = "SELECT bdate, COUNT(`Id`) AS amount FROM pf_pig WHERE `status` = 'อยู่' GROUP BY MONTH(bdate)";
@@ -31,10 +32,15 @@
 			<tr class="active">
 				<th colspan="2"><h4><strong class="alert alert-info">สรุปคอกสุกร </strong></h4></th>
 			</tr>
-			<?php foreach ($db1->fetch_array() as $rs) { ?>
+			<?php foreach ($db1->fetch_array() as $rs) {
+				$sqlstall = "SELECT COUNT(`id_stall`) AS sumstall FROM pf_pig WHERE `id_stall` = '".$rs['Id_sl']."' and status = 'อยู่'";
+	  			$db4->query($sqlstall);
+	  			$resstall = $db4->fetch_assoc();
+			 ?>
+
 			<tr>
-				<td width="100px"><?php echo ($rs['name']); ?></td>
-				<td width="100px"><?php echo "จำนวนสุกร  ".$rs['amount']."  ตัว"; ?></td>
+				<td width="100px"><?php echo ($rs['name_sl']); ?></td>
+				<td width="100px"><?php echo "จำนวนสุกร  ".$resstall['sumstall']."  ตัว"; ?></td>
 			</tr>
 			
 			<?php } ?>

@@ -36,7 +36,7 @@
 		<blockquote class="btn-default">
 			<div style="font-size: 25px">
 		  		<p style="font-size: 25px"><strong><?php echo $rs['from']; ?></strong></p>
-		  		<footer><?php echo $rs['r_money']; ?> บาท.</footer>
+		  		<p><?php echo $rs['r_money']; ?> บาท.</p>
 			</div>
 
 		</blockquote>

@@ -1,8 +1,9 @@
 <?php
 
 	require_once ('config.php');
-
+ 	@date_default_timezone_set("Asia/Bangkok"); 
 	class DB{
+
 		private $charset = "UTF8";
 		private $rs;
 		private $fatnor;
@@ -17,6 +18,7 @@
 	
 		public function query($strsql){
 			$this->rs = mysql_query($strsql);
+			// $this->insert_id = mysql_insert_id();
 		}
 	
 		public function num_rows(){
@@ -40,6 +42,11 @@
 
 		public function fetch_assoc(){
 			return mysql_fetch_assoc($this->rs);
+		}
+
+		public function insert_id(){
+
+			return mysql_insert_id();
 		}
 	}
 ?>

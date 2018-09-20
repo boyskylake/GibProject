@@ -6,7 +6,12 @@
 	$db=new DB();
 	$db2=new DB();
 
-	$sql = "SELECT * FROM `pf_pig` WHERE `status` = 'ขายแล้ว' ORDER BY `Id` DESC";
+	$sql = "SELECT pf_pig.Id,pf_pig.No,pf_pig.id_stall,pf_pig.id_typepig,pf_pig.bdate,pf_pig.status,pf_stall.name_sl,pf_stall.Id_sl,pf_typepig.Id_tp,pf_typepig.name_tp
+FROM pf_pig
+LEFT JOIN pf_stall
+ON pf_pig.id_stall = pf_stall.Id_sl
+LEFT JOIN pf_typepig
+ON pf_pig.id_typepig = pf_typepig.Id_tp WHERE pf_pig.status = 'ขายแล้ว'";
 	$db->query($sql);
 ?>
 
@@ -40,18 +45,18 @@
 
 	  		$num = 1;
 	  		foreach ($db->fetch_array() as $result) {
-	  			$sqlstall = "SELECT * FROM `pf_stall` WHERE Id = '".$result['id_stall']."'";
+	  			$sqlstall = "SELECT COUNT(`id_pig`) AS sumvac FROM pf_vaccine WHERE `id_pig` = '".$result['Id']."'";
 	  			$db2->query($sqlstall);
 	  			$resstall = $db2->fetch_assoc();
 	  	 ?>
 	    <tr>
 	      <th scope="row"><?php echo $num ?></th>
 	      <td><?php echo $result['No']; ?></td>
-	      <td><?php echo $resstall['name']; ?></td>
+	      <td><?php echo $result['name_sl']; ?></td>
 	      <td><?php echo date('d/m/Y',strtotime($result['bdate'])); ?></td>
-	      <td align="center"><?php echo $result['vaccine']; ?> <a href="managepig.php?v=vacView&id=<?php echo $result['Id']; ?>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-eye-open"></span></a>
+	      <td align="center"><?php echo $resstall['sumvac']; ?> <a href="managepig.php?v=vacView&id=<?php echo $result['Id']; ?>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-eye-open"></span></a>
 	  					&nbsp;</td>
-	      <td><?php echo $result['typepig']; ?></td>
+	      <td><?php echo $result['name_tp']; ?></td>
 	    </tr>
 	    <?php 
 	    $num++;

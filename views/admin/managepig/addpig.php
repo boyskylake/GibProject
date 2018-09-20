@@ -34,9 +34,13 @@
  require_once ('lib/DB.php');
 
     $db=new DB();
+    $db2=new DB();
 
     $sql = "SELECT * FROM `pf_stall`";
     $db->query($sql);
+
+    $sqltype = "SELECT * FROM `pf_typepig`";
+    $db2->query($sqltype);
 
  ?>
 
@@ -52,7 +56,7 @@
       <?php
        while ($stall = $db->fetch_assoc()){
        ?>
-       <option value="<?php echo $stall['Id']; ?>"><?php echo $stall['name']; ?></option>
+       <option value="<?php echo $stall['Id_sl']; ?>"><?php echo $stall['name_sl']; ?></option>
        <?php
        } 
        ?>
@@ -64,7 +68,16 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">ชนิดหมู</label>
-    <input type="text" class="form-control" id="typepig" name="typepig">
+    <select class="form-control" name="typepig" id="typepig">
+      <option value="">ระบุ</option>
+      <?php
+       while ($typepig = $db2->fetch_assoc()){
+       ?>
+       <option value="<?php echo $typepig['Id_tp']; ?>"><?php echo $typepig['name_tp']; ?></option>
+       <?php
+       } 
+       ?>
+    </select>
   </div>
 
   <button class="btn btn-primary" type="submit">เพิ่ม</button>

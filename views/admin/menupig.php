@@ -18,6 +18,12 @@
 				</a>
 			</li>
 			<li>
+				<a href="managepig.php?v=typepig">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				&nbsp;จัดการชนิดสุกร
+				</a>
+			</li>
+			<li>
 				<a href="managepig.php?v=pig">
 				<span class="glyphicon glyphicon-chevron-right"></span>
 				&nbsp;จัดการสุกร
@@ -26,7 +32,7 @@
 			<li>
 				<a href="managepig.php?v=vaccine">
 				<span class="glyphicon glyphicon-chevron-right"></span>
-				&nbsp;จัดการฉีดหวัดซีน
+				&nbsp;จัดการหวัดซีน
 				</a>
 			</li>
 		</ul>

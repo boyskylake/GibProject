@@ -7,12 +7,16 @@
 	$db2=new DB();
 
 	$id = $_GET['id'];
-	$sql = "SELECT * FROM `pf_vaccine` WHERE `id_pig` = '".$id."'";
+	$sql = "SELECT pf_pig.Id,pf_pig.No,pf_vaccine.id_vacbuy,pf_vaccine.id_pig,pf_vaccine.date,pf_buyvac.Id,pf_buyvac.name FROM pf_pig 
+LEFT JOIN pf_vaccine
+ON pf_pig.Id = pf_vaccine.id_pig
+LEFT JOIN pf_buyvac
+ON pf_vaccine.id_vacbuy = pf_buyvac.Id
+WHERE pf_vaccine.id_pig = '".$id."'";
 	$db->query($sql);
-
-	$sql = "SELECT * FROM `pf_pig` WHERE `Id` = '".$id."'";
 	$db2->query($sql);
-	$rspig = $db2->fetch_assoc();
+	$no = $db2->fetch_assoc();
+
 ?>
 
 <div class="panel panel-primary">
@@ -21,7 +25,7 @@
 			<div class="alert alert-info">
 				<div align="center">
 					<?php 
-						echo "เลขที่สุกร ".$rspig['No'];
+						echo "เลขที่สุกร ".$no['No'];
 					 ?>
 				</div>
 			</div>
@@ -32,7 +36,7 @@
 		<?php foreach ($db->fetch_array() as $rs) { ?>
 		<blockquote class="btn-default">
 			<div style="font-size: 25px">
-		  		<p style="font-size: 25px"><strong>ชื่อวัคซีน : <?php echo $rs['vaccine']; ?></strong></p>
+		  		<p style="font-size: 25px"><strong>ชื่อวัคซีน : <?php echo $rs['name']; ?></strong></p>
 		  		<p>วันที่ <?php echo date('d/m/Y',strtotime($rs['date'])); ?> </p>
 			</div>
 

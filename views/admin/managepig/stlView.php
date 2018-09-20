@@ -9,7 +9,7 @@
 	$db->query($sql);
 	$num = $db->num_rows();
 
-	$sqlstall = "SELECT * FROM `pf_stall` WHERE `Id` = '".$id."'";
+	$sqlstall = "SELECT * FROM `pf_stall` WHERE `Id_sl` = '".$id."'";
 	$db2->query($sqlstall);
 	$rsstall = $db2->fetch_assoc();
 ?>
@@ -20,7 +20,7 @@
 			<div class="alert alert-info">
 				<div align="center">
 					<?php 
-						echo "ชื่อคอก ".$rsstall['name'];
+						echo "ชื่อคอก ".$rsstall['name_sl'];
 					 ?>
 				</div>
 				<div align="right"><?php echo "จำนวนสุกร ".$num." ตัว"; ?></div>

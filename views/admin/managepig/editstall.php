@@ -24,7 +24,7 @@
 
     $db=new DB();
 
-    $sql = "SELECT * FROM `pf_stall` WHERE `Id` = '".$id."'";
+    $sql = "SELECT * FROM `pf_stall` WHERE `Id_sl` = '".$id."'";
     $db->query($sql);
     $res = $db->fetch_assoc();
 
@@ -34,9 +34,9 @@
 <form id="form1" name="form1" method="POST" action="managepig.php?v=process_editstall" onsubmit="return checkma()">
   <div class="form-group">
     <label for="exampleFormControlInput1">ชื่อคอก</label>
-    <input type="text" class="form-control" id="name" name="name" value="<?php echo $res['name']; ?>">
+    <input type="text" class="form-control" id="name" name="name" value="<?php echo $res['name_sl']; ?>">
   </div>
   
-  <input hidden type="text" name="id" id="id" value="<?php echo $res['Id']; ?>">
+  <input hidden type="text" name="id" id="id" value="<?php echo $res['Id_sl']; ?>">
   <button class="btn btn-primary" type="submit">เพิ่ม</button>
 </form>

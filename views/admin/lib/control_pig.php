@@ -56,6 +56,25 @@
 			}else if($v == "process_buypig"){
 				return require_once ('managepig/process_buypig.php');
 			}
+			else if($v == "typepig"){
+				return require_once ('managepig/typepig.php');
+			}else if($v == "vacspping"){
+				return require_once ('managepig/vacspping.php');
+			}else if($v == "process_vacsppig"){
+				return require_once ('managepig/process_vacsppig.php');
+			}else if($v == "typeView"){
+				return require_once ('managepig/typeView.php');
+			}else if($v == "edittype"){
+				return require_once ('managepig/edittype.php');
+			}else if($v == "deltype"){
+				return require_once ('managepig/deltype.php');
+			}else if($v == "addtpye"){
+				return require_once ('managepig/addtpye.php');
+			}else if($v == "process_addtype"){
+				return require_once ('managepig/process_addtype.php');
+			}else if($v == "process_edittype"){
+				return require_once ('managepig/process_edittype.php');
+			}
 		}
 
 		

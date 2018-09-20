@@ -36,6 +36,7 @@
 
     $db=new DB();
     $db2=new DB();
+    $db3=new DB();
 
     $sqlpig = "SELECT * FROM `pf_pig` WHERE `Id` = '".$id."'";
     $db2->query($sqlpig);
@@ -43,6 +44,9 @@
 
     $sql = "SELECT * FROM `pf_stall`";
     $db->query($sql);
+
+    $sqltype = "SELECT * FROM `pf_typepig`";
+    $db3->query($sqltype);
 
  ?>
 
@@ -58,12 +62,12 @@
     <?php
       while ($stall = $db->fetch_assoc()){
         echo '<option value="';
-          if($res['id_stall'] == $stall['Id']){
-              echo $stall['Id'].'" selected';
+          if($res['id_stall'] == $stall['Id_sl']){
+              echo $stall['Id_sl'].'" selected';
           }else{
-              echo $stall['Id'].'"';
+              echo $stall['Id_sl'].'"';
           }
-        echo '>'.$stall['name'].'</option>';
+        echo '>'.$stall['name_sl'].'</option>';
       }
     ?>
     </select>
@@ -74,7 +78,20 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">ชนิดหมู</label>
-    <input type="text" class="form-control" id="typepig" name="typepig" value="<?php echo $res['typepig']; ?>">
+    <select class="form-control" name="typepig" id="typepig">
+      <option value="">ระบุ</option>
+    <?php
+      while ($typepig = $db3->fetch_assoc()){
+        echo '<option value="';
+          if($res['id_typepig'] == $typepig['Id_tp']){
+              echo $typepig['Id_tp'].'" selected';
+          }else{
+              echo $typepig['Id_tp'].'"';
+          }
+        echo '>'.$typepig['name_tp'].'</option>';
+      }
+    ?>
+    </select>
   </div>
 
   <input hidden type="text" id="id" name="id" value="<?php echo $res['Id']; ?>">

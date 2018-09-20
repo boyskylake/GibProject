@@ -2,7 +2,7 @@
 	require_once ('lib/DB.php');
 
 	$db=new DB();
-	$sql = "UPDATE `pf_stall` SET `name`='".$_POST['name']."'  WHERE `Id`='".$_POST['id']."' ";
+	$sql = "UPDATE `pf_stall` SET `name_sl`='".$_POST['name']."'  WHERE `Id_sl`='".$_POST['id']."' ";
 	$db->query($sql);
 ?>
 

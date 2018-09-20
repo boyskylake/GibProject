@@ -2,8 +2,14 @@
 	require_once ('lib/DB.php');
 
 	$db=new DB();
-	$sql = "UPDATE `pf_vaccine` SET `vaccine`='".$_POST['vaccine']."', `date`='".$_POST['date']."'  WHERE `Id`='".$_POST['id']."' ";
-	$db->query($sql);
+	$db3=new DB();
+		
+		  	$sum = $_POST['price'] * $_POST['amount'];
+		  	$sqlbuy = "UPDATE `buy` SET `list`='ซื้อหวัดซีน ".$_POST['name']." จำนวน ".$_POST['amount']."',`b_money`='".$sum."' WHERE `id` = '".$_POST['idbuy']."' ";
+			$db3->query($sqlbuy);
+
+			$sql = "UPDATE `pf_buyvac` SET `name`= '".$_POST['name']."',`date_buy`='".$_POST['date']."',`amount`='".$_POST['amount']."',`price`='".$_POST['price']."' WHERE `Id` = '".$_POST['id']."'";
+			$db->query($sql);
 ?>
 
 <script>

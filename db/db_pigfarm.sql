@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2018 at 11:54 AM
+-- Generation Time: Sep 20, 2018 at 08:10 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -43,21 +43,10 @@ CREATE TABLE `activity` (
 --
 
 INSERT INTO `activity` (`id_act`, `name_act`, `date_act`, `detail_act`, `id_photo`, `date_in`, `status_act`) VALUES
-(1, 'teset1', '2018-08-10', 'sadasdasd', 1, '08-08-2018', 1),
 (23, 'act1', '2018-09-22', 'act1 detail', 23, '13-09-2018', 1),
-(3, 'test2', '2018-08-25   ', 'fsadfasdfadsfasdfasdfsadf\r\nasdfasdfasdfasdfasdf\r\nasdfsadfsaddfsadfasdfs\r\nsadsad\r\nasdfasfsafasf\r\nasdasdsad', 3, '08-08-2018', 1),
-(4, 'teset4', '2018-08-08', 'dasdasdasd', 4, '08-08-2018', 1),
 (24, 'act2', '2018-09-29', 'act2 detail', 24, '13-09-2018', 1),
-(25, 'act3', '2018-09-28', 'act3', 25, '13-09-2018', 1),
-(26, 'act4', '2018-09-21', 'act4', 29, '13-09-2018', 1),
-(27, 'act5', '2018-09-21', 'act5', 28, '13-09-2018', 1),
-(28, 'act6', '2018-09-29', 'act6', 27, '13-09-2018', 1),
-(29, 'act7', '2018-09-27', 'act7', 26, '13-09-2018', 1),
 (30, 'act8', '2018-09-27', 'ngdbcxv', 30, '13-09-2018', 1),
-(31, 'act9', '2018-09-27', 'efsadfdsfsdaf', 32, '13-09-2018', 1),
-(32, 'act10', '2018-09-28', 'regdfgfdgsdf', 31, '13-09-2018', 0),
-(19, 'ewfefsdfsadfasdfsadf', '2018-09-27', 'asdfsadfsadfasdfasdfasdfasdf', 22, '12-09-2018', 1),
-(20, 'ewfefsdfsadfasdfsadf2', '2018-09-27', 'asdfsadfsadfasdfasdfasdfasdf', 14, '12-09-2018', 1);
+(32, 'act10', '2018-09-28', 'regdfgfdgsdf', 31, '13-09-2018', 0);
 
 -- --------------------------------------------------------
 
@@ -76,29 +65,10 @@ CREATE TABLE `act_photo` (
 --
 
 INSERT INTO `act_photo` (`id_photo`, `name_photo`, `id_act`) VALUES
-(1, '36935865_205258070176892_1730869337796902912_n.jpg', 1),
-(22, '36935865_205258070176892_1730869337796902912_n.jpg', 19),
-(3, 'baner.jpg', 3),
-(4, 'DSC_0155_Cover.jpg', 4),
-(11, 'Screenshot (1).png', 20),
-(12, 'Screenshot (2).png', 20),
-(13, 'Screenshot (1).png', 20),
-(14, 'Capture.PNG', 20),
-(15, '36935865_205258070176892_1730869337796902912_n.jpg', 20),
-(21, '39454467_311459239429517_2277486711707533312_n.jpg', 19),
-(18, '39454467_311459239429517_2277486711707533312_n.jpg', 20),
-(19, '41331793_1894394330867297_392523297473953792_n.jpg', 20),
-(20, '41331793_1894394330867297_392523297473953792_n.jpg', 20),
 (23, 'Learn-coding-online.jpeg', 23),
 (24, 'line api.png', 24),
-(25, '37293500_2121795891398520_2020020138325049344_n.jpg', 25),
-(26, '39101837_1811393882243017_1506462755484336128_o.jpg', 29),
-(27, '36935865_205258070176892_1730869337796902912_n.jpg', 28),
-(28, 'baner.jpg', 27),
-(29, 'img_23744_tmp_5aPPR_600x600.jpg', 26),
 (30, 'Program-Code-Feature-Image.jpg', 30),
-(31, 'img_23744_tmp_5aPPR_600x600.jpg', 32),
-(32, '39101837_1811393882243017_1506462755484336128_o.jpg', 31);
+(31, 'img_23744_tmp_5aPPR_600x600.jpg', 32);
 
 -- --------------------------------------------------------
 
@@ -202,7 +172,16 @@ INSERT INTO `buy` (`id`, `date`, `list`, `b_money`, `created_date`) VALUES
 (85, '2018-08-13', 'ยาบ้า', 100, '2018-08-13 10:03:13'),
 (86, '2018-08-13', 'ซื้อผัก', 700, '2018-08-13 13:15:36'),
 (87, '2018-08-13', 'ซื้อผัก', 500, '2018-08-26 14:22:17'),
-(88, '2018-08-26', 'ซื้อผัก1', 1000, '2018-08-26 17:18:13');
+(88, '2018-08-26', 'ซื้อผัก1', 1000, '2018-08-26 17:18:13'),
+(108, '2018-09-20', 'ซื้อหวัดซีน วัคซีน3 จำนวน 10', 120, '2018-09-20 16:04:50'),
+(101, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 200', 24000, '2018-09-20 09:51:00'),
+(102, '2018-09-20', 'ซื้อหวัดซีน วัคซีน2 จำนวน 10', 1200, '2018-09-20 11:52:03'),
+(103, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 10', 200, '2018-09-20 13:37:45'),
+(104, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 200', 20000, '2018-09-20 13:38:32'),
+(105, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 12', 240, '2018-09-20 13:40:26'),
+(106, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 12', 240, '2018-09-20 13:41:01'),
+(107, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 12', 240, '2018-09-20 13:41:56'),
+(109, '2018-09-21', 'ซื้อหวัดซีน วัคซีน2 จำนวน 10', 1000, '2018-09-20 17:15:31');
 
 -- --------------------------------------------------------
 
@@ -229,6 +208,32 @@ INSERT INTO `member` (`UserID`, `Username`, `Password`, `Name`, `Status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pf_buyvac`
+--
+
+CREATE TABLE `pf_buyvac` (
+  `Id` int(11) NOT NULL,
+  `id_buy` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `date_buy` date NOT NULL,
+  `amount` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `status` enum('มี','หมด') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'มี'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pf_buyvac`
+--
+
+INSERT INTO `pf_buyvac` (`Id`, `id_buy`, `name`, `date_buy`, `amount`, `price`, `status`) VALUES
+(2, 101, 'วัคซีน2', '2018-09-20', 0, 120, 'หมด'),
+(3, 107, 'วัคซีน1', '2018-09-21', 11, 20, 'มี'),
+(4, 108, 'วัคซีน3', '2018-09-21', 7, 12, 'มี'),
+(5, 109, 'วัคซีน2', '2018-09-20', 9, 100, 'มี');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pf_pig`
 --
 
@@ -236,10 +241,8 @@ CREATE TABLE `pf_pig` (
   `Id` int(11) NOT NULL,
   `No` int(11) NOT NULL,
   `id_stall` int(11) NOT NULL,
+  `id_typepig` int(11) NOT NULL,
   `bdate` date NOT NULL,
-  `vaccine` int(11) NOT NULL,
-  `id_vac` int(11) NOT NULL,
-  `typepig` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `status` enum('อยู่','ขายแล้ว') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'อยู่'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -247,11 +250,12 @@ CREATE TABLE `pf_pig` (
 -- Dumping data for table `pf_pig`
 --
 
-INSERT INTO `pf_pig` (`Id`, `No`, `id_stall`, `bdate`, `vaccine`, `id_vac`, `typepig`, `status`) VALUES
-(1, 1, 2, '2018-09-14', 0, 0, 'แม่พัน', 'ขายแล้ว'),
-(2, 2, 1, '2018-09-29', 0, 0, 'พ่อพัน2', 'ขายแล้ว'),
-(4, 11, 1, '2018-09-21', 3, 0, 'แม่พัน2', 'อยู่'),
-(5, 123, 1, '2018-09-13', 0, 0, 'พ่อพัน2', 'อยู่');
+INSERT INTO `pf_pig` (`Id`, `No`, `id_stall`, `id_typepig`, `bdate`, `status`) VALUES
+(1, 1, 2, 0, '2018-09-14', 'ขายแล้ว'),
+(2, 2, 1, 1, '2018-09-29', 'ขายแล้ว'),
+(4, 111, 1, 1, '2018-09-21', 'ขายแล้ว'),
+(5, 123, 2, 2, '2018-09-13', 'ขายแล้ว'),
+(6, 1234, 1, 1, '2018-09-21', 'อยู่');
 
 -- --------------------------------------------------------
 
@@ -260,18 +264,37 @@ INSERT INTO `pf_pig` (`Id`, `No`, `id_stall`, `bdate`, `vaccine`, `id_vac`, `typ
 --
 
 CREATE TABLE `pf_stall` (
-  `Id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `amount` int(11) NOT NULL
+  `Id_sl` int(11) NOT NULL,
+  `name_sl` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `pf_stall`
 --
 
-INSERT INTO `pf_stall` (`Id`, `name`, `amount`) VALUES
-(1, 'คอก2', 4),
-(2, 'คอก1', 1);
+INSERT INTO `pf_stall` (`Id_sl`, `name_sl`) VALUES
+(1, 'คอก1'),
+(2, 'คอก2'),
+(3, 'คอก3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pf_typepig`
+--
+
+CREATE TABLE `pf_typepig` (
+  `Id_tp` int(11) NOT NULL,
+  `name_tp` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pf_typepig`
+--
+
+INSERT INTO `pf_typepig` (`Id_tp`, `name_tp`) VALUES
+(1, 'แม่พัน'),
+(2, 'พ่อพัน');
 
 -- --------------------------------------------------------
 
@@ -282,7 +305,7 @@ INSERT INTO `pf_stall` (`Id`, `name`, `amount`) VALUES
 CREATE TABLE `pf_vaccine` (
   `Id` int(11) NOT NULL,
   `id_pig` int(11) NOT NULL,
-  `vaccine` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `id_vacbuy` int(11) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -290,10 +313,19 @@ CREATE TABLE `pf_vaccine` (
 -- Dumping data for table `pf_vaccine`
 --
 
-INSERT INTO `pf_vaccine` (`Id`, `id_pig`, `vaccine`, `date`) VALUES
-(1, 4, 'wwwwwwww', '2018-07-31'),
-(2, 4, 'วัคซีน12', '2018-09-27'),
-(3, 4, 'วัคซีนwww', '2018-09-20');
+INSERT INTO `pf_vaccine` (`Id`, `id_pig`, `id_vacbuy`, `date`) VALUES
+(1, 4, 3, '2018-07-31'),
+(2, 4, 3, '2018-09-27'),
+(3, 4, 3, '2018-09-20'),
+(4, 4, 2, '2018-09-20'),
+(5, 4, 2, '2018-09-21'),
+(6, 4, 2, '2018-09-21'),
+(7, 4, 2, '2018-09-24'),
+(8, 5, 3, '2018-09-27'),
+(9, 4, 5, '2018-09-21'),
+(10, 4, 4, '2018-09-22'),
+(11, 5, 4, '2018-09-21'),
+(12, 5, 4, '2018-09-27');
 
 -- --------------------------------------------------------
 
@@ -332,7 +364,9 @@ INSERT INTO `recieve` (`id`, `date`, `from`, `r_money`, `created_date`) VALUES
 (17, '2018-08-13', 'ขายหมา', 300, '2018-08-13 14:26:34'),
 (18, '2018-09-10', 'ซื้อขนม', 10, '2018-09-10 05:39:52'),
 (19, '2018-09-10', 'ซื้อม่ราา', 100, '2018-09-10 05:40:26'),
-(20, '2018-09-13', 'ขายสุกรเลขที่ 2', 3000, '2018-09-13 18:30:05');
+(20, '2018-09-13', 'ขายสุกรเลขที่ 2', 3000, '2018-09-13 18:30:05'),
+(28, '2018-09-21', 'ขายสุกรเลขที่ 111', 6600, '2018-09-20 17:55:22'),
+(29, '2018-09-21', 'ขายสุกรเลขที่ 123', 6600, '2018-09-20 17:59:26');
 
 -- --------------------------------------------------------
 
@@ -368,13 +402,6 @@ CREATE TABLE `td_contect` (
   `phone` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `td_contect`
---
-
-INSERT INTO `td_contect` (`Id`, `name`, `email`, `phone`, `message`) VALUES
-(2, 'นาย อรรถพงษ์ นิมี', 'boyskylab96@gmail.com', '0957195867', 'dasdsaffdgvadvasdvasdv');
 
 -- --------------------------------------------------------
 
@@ -450,6 +477,12 @@ ALTER TABLE `member`
   ADD UNIQUE KEY `Username` (`Username`);
 
 --
+-- Indexes for table `pf_buyvac`
+--
+ALTER TABLE `pf_buyvac`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `pf_pig`
 --
 ALTER TABLE `pf_pig`
@@ -459,7 +492,13 @@ ALTER TABLE `pf_pig`
 -- Indexes for table `pf_stall`
 --
 ALTER TABLE `pf_stall`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id_sl`);
+
+--
+-- Indexes for table `pf_typepig`
+--
+ALTER TABLE `pf_typepig`
+  ADD PRIMARY KEY (`Id_tp`);
 
 --
 -- Indexes for table `pf_vaccine`
@@ -517,7 +556,7 @@ ALTER TABLE `act_photo`
 -- AUTO_INCREMENT for table `buy`
 --
 ALTER TABLE `buy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -526,28 +565,40 @@ ALTER TABLE `member`
   MODIFY `UserID` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `pf_buyvac`
+--
+ALTER TABLE `pf_buyvac`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `pf_pig`
 --
 ALTER TABLE `pf_pig`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pf_stall`
 --
 ALTER TABLE `pf_stall`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_sl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `pf_typepig`
+--
+ALTER TABLE `pf_typepig`
+  MODIFY `Id_tp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pf_vaccine`
 --
 ALTER TABLE `pf_vaccine`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `recieve`
 --
 ALTER TABLE `recieve`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `td_about`

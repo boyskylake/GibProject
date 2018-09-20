@@ -1,7 +1,7 @@
 <div class="panel panel-success">
   	<div class="panel-heading">
   		<span class="glyphicon glyphicon-home"></span>
-  		&nbsp;Main Menu
+  		&nbsp;เมนูหลัก
   	</div>
 
   	<div class="panel-body">
@@ -37,7 +37,7 @@
 <div class="panel panel-success">
   	<div class="panel-heading">
   		<span class="glyphicon glyphicon-stats"></span>
-  		&nbsp;Report
+  		&nbsp;รายงาน
   	</div>
 
   	<div class="panel-body">
