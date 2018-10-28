@@ -21,9 +21,9 @@
   		<table class="table table-hover">
   			<thead>
   				<tr class="active">
-  					<th width="150px">DATE</th>
-            <th>FROM/LIST</th>
-  					<th width="100px">MONEY</th>
+  					<th width="150px">เวลา</th>
+            <th>รายการ</th>
+  					<th width="100px">ราคา</th>
   					<th width="50px">แก้ไข</th>
   					<th width="50px">ลบ</th>
   				</tr>

@@ -3,8 +3,8 @@
 
 	$db=new DB();
 	$db2=new DB();
-
-	$sql = "INSERT INTO recieve VALUES (NULL, '".$_POST['date']."', '".$_POST['from']."', '".$_POST['money']."', NULL)";
+    $datetime = date("Y-m-d h:i:s");
+	$sql = "INSERT INTO recieve VALUES (NULL, '".$_POST['date']."', '".$_POST['from']."', '".$_POST['money']."', '$datetime')";
 	$db->query($sql);
 
 	$sqlpigsts = "UPDATE `pf_pig` SET `status`= 'ขายแล้ว' WHERE `Id`= '".$_POST['id']."' ";

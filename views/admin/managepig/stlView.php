@@ -5,7 +5,10 @@
 	$db2=new DB();
 
 	$id = $_GET['id'];
-	$sql = "SELECT * FROM `pf_pig` WHERE `id_stall` = '".$id."' && `status` = 'อยู่'";
+	$sql = "SELECT * FROM `pf_pig` 
+    LEFT JOIN pf_typepig
+    ON pf_pig.id_typepig = pf_typepig.Id_tp
+    WHERE `id_stall` = '".$id."' AND `status` = 'อยู่'";
 	$db->query($sql);
 	$num = $db->num_rows();
 
@@ -34,7 +37,7 @@
 			<div style="font-size: 25px">
 		  		<p style="font-size: 25px"><strong>เลขที่สุกร : <?php echo $rs['No']; ?></strong></p>
 		  		<p>วันที่เกิด <?php echo date('d/m/Y',strtotime($rs['bdate'])); ?> </p>
-		  		<p>ชนิด <?php echo $rs['typepig']; ?> </p>
+		  		<p>ชนิด <?php echo $rs['name_tp']; ?> </p>
 			</div>
 
 		</blockquote>

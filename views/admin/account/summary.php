@@ -74,7 +74,7 @@
 			<tr>
 				<td>
 					<div align="right">
-					<strong>TOTAL</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+					<strong>ยอดรวม</strong>&nbsp;&nbsp;&nbsp;&nbsp;
 					</div>
 				</td>
 				<td><strong><?php echo $AC->putComma((string)$s1); ?></strong></td>
@@ -92,7 +92,7 @@
 			<tr>
 				<td>
 					<div align="right">
-					<strong>TOTAL</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+					<strong>ยอดรวม</strong>&nbsp;&nbsp;&nbsp;&nbsp;
 					</div>
 				</td>
 				<td>
@@ -125,7 +125,7 @@
 			<tr>
 				<td>
 					<div align="right">
-					<strong>TOTAL</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+					<strong>ยอดรวม</strong>&nbsp;&nbsp;&nbsp;&nbsp;
 					</div>
 				</td>
 				<td><strong><?php echo $AC->putComma((string)$y1); ?></strong></td>
@@ -143,7 +143,7 @@
 			<tr>
 				<td>
 					<div align="right">
-					<strong>TOTAL</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+					<strong>ยอดรวม</strong>&nbsp;&nbsp;&nbsp;&nbsp;
 					</div>
 				</td>
 				<td>

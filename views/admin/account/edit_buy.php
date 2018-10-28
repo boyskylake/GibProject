@@ -38,7 +38,7 @@
         <div class="form-group">
           <label for="inputPassword" class="col-sm-2 control-label">จำนวนเงิน</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="money[]" 
+            <input type="number" min="0" class="form-control" name="money[]" 
             value="<?php echo $rs['b_money']; ?>" />
           </div>
         </div>
@@ -47,7 +47,7 @@
         <?php
     			}
     		?>
-        <button type="submit" class="btn btn-primary btn-lg">SAVE</button>
+        <button type="submit" class="btn btn-primary btn-lg">บันทึก</button>
       </form>
   	</div>
 </div>

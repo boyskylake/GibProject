@@ -1,5 +1,4 @@
 <?php 
-    // session_unset();
     session_start();
     $_SESSION['pages'] = $_SERVER['SCRIPT_NAME'];
     require_once 'controller/check_login.php';
@@ -18,8 +17,6 @@
             <!-- header -->
             <nav class="navbar navbar-default">
                 <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <?php require_once 'include/navber.php'; ?>
                     <!-- //navbar-collapse -->
                 </div>
@@ -35,7 +32,7 @@
     <div class="main-textgrids">
         <div class="container">
             <div class="w3ls-heading">
-                <h2 class="h-two">Stagement</h2>
+                <h2 class="h-two">สรุป ทั้งหมด</h2>
             </div>
             <div class="statements">
                 <div class="col-md-12 mission" align="center">

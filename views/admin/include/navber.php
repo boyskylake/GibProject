@@ -4,28 +4,28 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-left">
 						<?php 
-							if ($_SESSION['pages'] == '/gip/views/admin/admin.php') {
+							if ($_SESSION['pages'] == '/views/admin/admin.php') {
 								echo "<li><a href='admin.php' class='btn w3ls-hover active'>หน้าแรก</a></li>
 									<li><a href='account.php' class='btn w3ls-hover'>รายรับ-รายจ่าย</a></li>
 									<li><a href='general.php' class='btn w3ls-hover'>จัดการข้อมูลทั่วไป</a></li>
 									<li><a href='managepig.php' class='btn w3ls-hover'>จัดการสุกร</a></li>
 									<li><a href='controller/logout.php' class='btn w3ls-hover'>ออกจากระบบ</a></li>";
 							}
-							elseif ($_SESSION['pages'] == '/gip/views/admin/account.php') {
+							elseif ($_SESSION['pages'] == '/views/admin/account.php') {
 								echo "<li><a href='admin.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='account.php' class='btn w3ls-hover active'>รายรับ-รายจ่าย</a></li>   
 									<li><a href='general.php' class='btn w3ls-hover'>จัดการข้อมูลทั่วไป</a></li>
 									<li><a href='managepig.php' class='btn w3ls-hover'>จัดการสุกร</a></li>
 									<li><a href='controller/logout.php' class='btn w3ls-hover'>ออกจากระบบ</a></li>";
 								}
-							elseif ($_SESSION['pages'] == '/gip/views/admin/general.php' || $_SESSION['pages'] == '/gip/views/admin/activity.php') {
+							elseif ($_SESSION['pages'] == '/views/admin/general.php' || $_SESSION['pages'] == '/views/admin/activity.php') {
 								echo "<li><a href='admin.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='account.php' class='btn w3ls-hover'>รายรับ-รายจ่าย</a></li>   
 									<li><a href='general.php' class='btn w3ls-hover active'>จัดการข้อมูลทั่วไป</a></li>
 									<li><a href='managepig.php' class='btn w3ls-hover'>จัดการสุกร</a></li>
 									<li><a href='controller/logout.php' class='btn w3ls-hover'>ออกจากระบบ</a></li>";
 							}
-							elseif ($_SESSION['pages'] == '/gip/views/admin/managepig.php') {
+							elseif ($_SESSION['pages'] == '/views/admin/managepig.php') {
 								echo "<li><a href='admin.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='account.php' class='btn w3ls-hover'>รายรับ-รายจ่าย</a></li>   
 									<li><a href='general.php' class='btn w3ls-hover'>จัดการข้อมูลทั่วไป</a></li>

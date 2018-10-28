@@ -105,9 +105,9 @@
   		<table class="table table-hover">
   			<thead>
   				<tr class="active">
-  					<th width="150px">DATE</th>
-  					<th>FROM</th>
-  					<th width="100px">MONEY</th>
+  					<th width="150px">เวลา</th>
+  					<th>รายการ</th>
+  					<th width="100px">ราคา</th>
   				</tr>
   			</thead>
   			<tbody>
@@ -130,7 +130,7 @@
             </td>
 	  				<td>
               <div align="right">
-                <?php echo $rs['Rmoney']; ?>&nbsp;&nbsp;BATH.
+                <?php echo $rs['Rmoney']; ?>&nbsp;&nbsp;บาท.
               </div>
             </td>
   				</tr>

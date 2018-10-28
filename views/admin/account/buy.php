@@ -32,14 +32,14 @@
   			<div align="right">
 	  			<button type="submit" class="btn btn-success btn-lg">
 	  				<span class="glyphicon glyphicon-floppy-disk"></span>
-	  				&nbsp;Save
+	  				&nbsp;บันทึก
 	  			</button>
 	  			<hr></hr>
   			</div>
   			
 	  		<div class="alert alert-info">
 				<div class="form-group">
-					<label class="col-sm-2 control-label" for="date">เวลา</label>
+					<label class="col-sm-2 control-label" for="date">วันที่</label>
 		    		<div class="col-xs-4">
 		    			<?php $today = getdate(); ?>
 		    			<input readonly value="<?php echo date("Y-m-d"); ?>" name="date" placeholder="ปปปป-ดด-วว" type="text" class="form-control input-lg"/>
@@ -55,7 +55,7 @@
 	  			<div class="form-group">
 	  				<label class="col-sm-2 control-label" for="money">ราคา</label>
 	  				<div class="col-xs-2">
-	    				<input name="money" id="money" type="text" class="form-control input-lg" />
+	    				<input name="money" id="money" type="number" min="0" class="form-control input-lg" />
 	    			</div>
 	    			<label class="control-label" for="money">บาท.</label>
 	  			</div>

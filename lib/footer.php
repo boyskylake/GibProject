@@ -25,9 +25,9 @@
 				<div class="col-md-4 col-sm-4 footer-wthree-grid">
 					<h3>ข้อมูล ติดต่อ</h3>
 					<ul>
-						<li>ที่อยู่ : ............</li> 
-						<li>.................</li>
-						<li>โทร : 0XX XXX XXXX</li>
+                        <li>ที่อยู่ : 130 หมู่ 2 ตำบลวาใหญ่ </li> 
+						<li>อำเภออากาศอำนวย จังหวัดสกลนคร 47170</li>
+						<li>โทร : 084 417 2967</li>
 						<li><a href="mailto:info@example.com"> เมล@example.com</a></li>
 					</ul>
 				</div>

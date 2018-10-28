@@ -66,9 +66,9 @@ session_unset();
 						<div class="left-agileits">
 							<h3>ที่อยู่</h3>
 								<ul>
-									<li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> ..............</li>
+									<li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 130 หมู่ 2 ตำบลวาใหญ่ อำเภออากาศอำนวย จังหวัดสกลนคร 47170</li>
 									<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">อีเมล@example.com</a></li>
-									<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>0XXXXXXXXX</li>
+									<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>084 417 2967</li>
 								</ul>
 						</div>
 					</div>

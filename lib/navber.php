@@ -11,25 +11,25 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-left">
 							<?php 
-							if ($_SESSION['pages'] == '/gip/views/index.php') {
+							if ($_SESSION['pages'] == '/views/index.php') {
 								echo "<li><a href='index.php' class='btn w3ls-hover active'>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover'>กิจกรรม</a></li>
 									<li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>";
 							}
-							elseif ($_SESSION['pages'] == '/gip/views/about.php') {
+							elseif ($_SESSION['pages'] == '/views/about.php') {
 								echo "<li><a href='index.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover active'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover'>กิจกรรม</a></li>
 									<li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>";
 							}
-							elseif ($_SESSION['pages'] == '/gip/views/activity.php') {
+							elseif ($_SESSION['pages'] == '/views/activity.php') {
 								echo "<li><a href='index.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover active'>กิจกรรม</a></li>
 									<li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>";
 							}
-							elseif ($_SESSION['pages'] == '/gip/views/contact.php') {
+							elseif ($_SESSION['pages'] == '/views/contact.php') {
 								echo "<li><a href='index.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover'>กิจกรรม</a></li>

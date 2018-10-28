@@ -14,5 +14,5 @@
 ?>
 
 <script>
-	window.location='../index.php?v=ManageRecieve';
+	window.location='../account.php?v=ManageRecieve';
 </script>

@@ -3,8 +3,9 @@
 
 	$db=new DB();
 	$db2=new DB();
-	$db3=new DB();
-
+    $db3=new DB();
+    
+    $datetime = date("Y-m-d h:i:s");
 	$data = date("Y-m-d");
 
 		$strSQL1 = "SELECT * FROM pf_buyvac where name = '".$_POST['name']."' AND status = 'มี' ";
@@ -24,8 +25,9 @@
 		  else 
 		  {
 		   $sum = $_POST['price'] * $_POST['amount'];
-
-		   $sqlbuy = "INSERT INTO buy VALUES (NULL, '".$data."', 'ซื้อหวัดซีน ".$_POST['name']." จำนวน ".$_POST['amount']."', '".$sum."', NULL)";
+            $name = $_POST['name'];
+            $amonut = $_POST['amount'];
+		   $sqlbuy = "INSERT INTO buy VALUES (NULL, '$data', 'ซื้อหวัดซีน $name จำนวน $amonut', '$sum', '$datetime')";
 			$db3->query($sqlbuy);
 			$idbuy = $db3->insert_id();
 
