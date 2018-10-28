@@ -41,7 +41,7 @@
   	<div class="panel-heading">
   		<h3>
   			<span class="glyphicon glyphicon-stats"></span>
-  			<strong>รายการใช้จ่ายเงิน</strong>
+  			<strong>รายงาน : รายจ่าย</strong>
   		</h3>
   	</div>
   	<div class="panel-body">
@@ -104,7 +104,7 @@
   		<table class="table table-hover">
   			<thead>
   				<tr class="active">
-  					<th width="150px"><div align="center">เวลา</div></th>
+  					<th width="150px"><div align="center">วันที่</div></th>
   					<th>รายการ</th>
   					<th width="150px"><div align="center">ราคา</div></th>
   				</tr>

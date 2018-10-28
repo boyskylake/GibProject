@@ -105,7 +105,7 @@
   		<table class="table table-hover">
   			<thead>
   				<tr class="active">
-  					<th width="150px">เวลา</th>
+  					<th width="150px">วันที่</th>
   					<th>รายการ</th>
   					<th width="100px">ราคา</th>
   				</tr>

@@ -29,21 +29,24 @@ session_unset();
 					<ul class="slides">
 						<li>
 							<div class="banner-w3lstext">
-								<h3>สไลด์โชว์1</h3>
-								<p>ภาพสไลด์โชว์1</p>
+								<!--<h3>สไลด์โชว์1</h3>
+								<p>ภาพสไลด์โชว์1</p>-->
+								<img src="../images/h1.jpg" width="100">
 							</div>
 						</li>
 						<li>
 							<div class="banner-w3lstext">
-								<h3>สไลด์โชว์2</h3>
-								<p>ภาพสไลด์โชว์2</p>
+								<!--<h3>สไลด์โชว์2</h3>
+								<p>ภาพสไลด์โชว์2</p>-->
+								<img src="../images/h2.jpg">
 							</div>
 						</li>
 						<li>
 							<div class="banner-w3lstext">
 								
-								<h3>สไลด์โชว์3</h3>
-								<p>ภาพสไลด์โชว์3</p>
+								<!--<h3>สไลด์โชว์3</h3>
+								<p>ภาพสไลด์โชว์3</p>-->
+								<img src="../images/h3.jpg">
 							</div>
 						</li>
 					</ul> 

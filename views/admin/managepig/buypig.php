@@ -4,7 +4,13 @@ require_once ('lib/DB.php');
 
     $db=new DB();
     $db2=new DB();
-
+    $db3=new DB();
+    
+    $sqlan = "SELECT * FROM `pf_amount` WHERE `id_an` = '1'";
+    $db3->query($sqlan);
+    $resan = $db3->fetch_assoc();
+    $amount = $resan['amount'];
+    
     $sql = "SELECT * FROM `pf_pig` WHERE `Id` = '".$id."' ";
     $db->query($sql);
     $res = $db->fetch_assoc();
@@ -41,7 +47,7 @@ require_once ('lib/DB.php');
   			    function changkk(){
 
 				   var kk = document.getElementById('kk').value;
-				   var sum = kk * 55;
+				   var sum = kk * <?php echo $amount; ?>;
 
 				   document.getElementById('money').value = sum;
 				    }

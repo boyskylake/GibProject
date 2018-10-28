@@ -66,7 +66,7 @@ body a:hover{
 	-o-background-size:cover;
 	-ms-background-size:cover; 	
 	background-size:cover; 
-	min-height: 790px;
+	min-height: 400px;
 	position:relative;
 } 
 .banner-1{ 
@@ -229,11 +229,14 @@ body a:hover{
 /*-- //social-icons --*/ 
 /*-- banner-text --*/ 
 .banner-text {
-    margin-top: 15em;
+    /*margin-top: 15em;*/
 }
 .banner-w3lstext {
     padding: 1em;
 	text-align: center;
+}
+.banner-w3lstext img {
+    width: 10;
 }
 .banner-w3lstext h2 ,.banner-w3lstext h3{
     font-size: 3em;

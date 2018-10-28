@@ -1,5 +1,5 @@
 <h3>
-  <a href="activity.php?v=data_act_add"><button type="button" class="btn btn-primary">เพิ่มบริการ</button></a>
+  <a href="activity.php?v=data_act_add"><button type="button" class="btn btn-primary">เพิ่มกิจกรรม</button></a>
 </h3><br>
 <?php 
   require_once ('lib/DB.php');
