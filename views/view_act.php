@@ -98,9 +98,9 @@ session_unset();
         else
         ?>
             <li>
-          <table width="100%" border="0" cellpadding="1" cellspacing="0">
+          <table border="0" cellpadding="1" cellspacing="0">
             <tr>
-              <td width="99%" height="60">
+              <td width="99%" height="99%">
                <!-- <div align="left">
                   <span class="style37"> -->
               <?php
@@ -115,7 +115,7 @@ session_unset();
                   $objResult = $db3->fetch_assoc();
                   if(!$objResult)
                 {
-                echo"<img src='admin/activity/images/9MNUSsbvD0i.png'  width='32' height='32' /><font color='#000000' face='Tahoma' size='1'> ยังไม่ได้เพิ่มรูปภาพใดๆ </font>";
+                echo"<img src='admin/activity/images/9MNUSsbvD0i.png'  width='100' height='100' /><font color='#000000' face='Tahoma' size='1'> ยังไม่ได้เพิ่มรูปภาพใดๆ </font>";
                 }
                 else
                 { 
@@ -129,7 +129,7 @@ session_unset();
                  echo "<td>";                                 
                  ?>
                 <!-- </span> </div> -->
-                  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <table border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td valign="top">
                         <table id="Table_01" width="128" height="64" border="0" cellpadding="0" cellspacing="0">
@@ -140,7 +140,7 @@ session_unset();
                           </tr>
                           <tr>
                             <td></td>
-                            <td valign="top"><a href="admin/activity/myphoto/<?php echo $objResult["name_photo"];?>" rel="lightbox[roadtrip]"><img src="admin/activity/myphoto/<?php echo $objResult["name_photo"];?>" width="120" border="0" /></a></td>
+                            <td valign="top"><a href="admin/activity/myphoto/<?php echo $objResult["name_photo"];?>" rel="lightbox[roadtrip]"><img src="admin/activity/myphoto/<?php echo $objResult["name_photo"];?>" width="400" border="0" /></a></td>
                             <td></td>
                           </tr>
                           <tr>

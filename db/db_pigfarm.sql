@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 20, 2018 at 08:10 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Host: 127.0.0.1:56596
+-- Generation Time: Oct 30, 2018 at 09:16 PM
+-- Server version: 5.7.9
+-- PHP Version: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -43,10 +41,11 @@ CREATE TABLE `activity` (
 --
 
 INSERT INTO `activity` (`id_act`, `name_act`, `date_act`, `detail_act`, `id_photo`, `date_in`, `status_act`) VALUES
-(23, 'act1', '2018-09-22', 'act1 detail', 23, '13-09-2018', 1),
-(24, 'act2', '2018-09-29', 'act2 detail', 24, '13-09-2018', 1),
-(30, 'act8', '2018-09-27', 'ngdbcxv', 30, '13-09-2018', 1),
-(32, 'act10', '2018-09-28', 'regdfgfdgsdf', 31, '13-09-2018', 0);
+(23, 'สุกรขุน', '2018-09-22  ', 'จำหน่ายสุกรขุน ราคาเป็นกันเอง', 38, '13-09-2018', 1),
+(24, 'ลูกสุกร', '2018-09-29 ', '', 34, '13-09-2018', 1),
+(30, 'ลูกสุกร', '2018-09-27  ', 'จับลูกสุกรขาย ตัวละ 1000 บาท', 36, '13-09-2018', 1),
+(32, 'สุกร', '2018-09-28 ', '', 33, '13-09-2018', 1),
+(33, 'สุกรขุนเกิดใหม่', '2018-10-26', 'สุกรขุนเกิดใหม่', 45, '27-10-2018', 0);
 
 -- --------------------------------------------------------
 
@@ -65,10 +64,19 @@ CREATE TABLE `act_photo` (
 --
 
 INSERT INTO `act_photo` (`id_photo`, `name_photo`, `id_act`) VALUES
-(23, 'Learn-coding-online.jpeg', 23),
-(24, 'line api.png', 24),
-(30, 'Program-Code-Feature-Image.jpg', 30),
-(31, 'img_23744_tmp_5aPPR_600x600.jpg', 32);
+(37, 'DSCF5170.JPG', 23),
+(34, 'DSCF5133.JPG', 24),
+(35, 'DSCF5133.JPG', 24),
+(33, 'DSCF5159.JPG', 32),
+(36, 'DSCF5140.JPG', 30),
+(38, 'DSCF5170.JPG', 23),
+(39, 'DSCF5140.JPG', 32),
+(40, 'DSCF5149.JPG', 32),
+(41, 'DSCF5155.JPG', 23),
+(42, 'DSCF5130.JPG', 30),
+(43, 'DSCF5140.JPG', 30),
+(44, 'DSCF5165.JPG', 24),
+(45, 'DSCF5235.JPG', 33);
 
 -- --------------------------------------------------------
 
@@ -89,7 +97,7 @@ CREATE TABLE `buy` (
 --
 
 INSERT INTO `buy` (`id`, `date`, `list`, `b_money`, `created_date`) VALUES
-(1, '2014-01-30', 'น้ำมันรถ', 100, '2014-02-04 18:02:21'),
+(112, '2018-10-26', 'ซื้อผัก', 2000, '2018-10-26 12:49:20'),
 (2, '2014-01-30', 'ข้าวกลางวัน', 30, '2014-02-04 18:02:38'),
 (3, '2014-01-30', 'ข้าวเย็น', 35, '2014-02-04 18:02:54'),
 (4, '2014-01-30', 'ซื้อขนม', 30, '2014-02-04 18:03:11'),
@@ -161,7 +169,6 @@ INSERT INTO `buy` (`id`, `date`, `list`, `b_money`, `created_date`) VALUES
 (70, '2014-02-11', 'ข้าวกลางวัน', 40, '2014-02-11 12:09:39'),
 (71, '2014-02-11', 'ซื้อไข่ต้ม', 15, '2014-02-11 12:09:55'),
 (72, '2014-02-12', 'ข้าวกลางวัน', 30, '2014-02-12 13:55:03'),
-(73, '2014-02-12', 'ซื้อขนมปัง(นัดมอ)', 30, '2014-02-12 13:55:19'),
 (74, '2014-02-12', 'ซื้อข้าวโพดทอด(นัดมอ)', 20, '2014-02-12 13:55:40'),
 (75, '2014-02-12', 'ซื้อไข่ต้ม', 15, '2014-02-12 13:55:47'),
 (76, '2014-02-12', 'ซื้อนมโฟโมส', 12, '2014-02-12 13:56:03'),
@@ -173,15 +180,19 @@ INSERT INTO `buy` (`id`, `date`, `list`, `b_money`, `created_date`) VALUES
 (86, '2018-08-13', 'ซื้อผัก', 700, '2018-08-13 13:15:36'),
 (87, '2018-08-13', 'ซื้อผัก', 500, '2018-08-26 14:22:17'),
 (88, '2018-08-26', 'ซื้อผัก1', 1000, '2018-08-26 17:18:13'),
-(108, '2018-09-20', 'ซื้อหวัดซีน วัคซีน3 จำนวน 10', 120, '2018-09-20 16:04:50'),
+(108, '2018-09-20', 'ซื้อหวัดซีน วัคซีนลดไข้ จำนวน 3', 375, '2018-10-30 08:22:55'),
 (101, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 200', 24000, '2018-09-20 09:51:00'),
 (102, '2018-09-20', 'ซื้อหวัดซีน วัคซีน2 จำนวน 10', 1200, '2018-09-20 11:52:03'),
 (103, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 10', 200, '2018-09-20 13:37:45'),
 (104, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 200', 20000, '2018-09-20 13:38:32'),
 (105, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 12', 240, '2018-09-20 13:40:26'),
 (106, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 12', 240, '2018-09-20 13:41:01'),
-(107, '2018-09-20', 'ซื้อหวัดซีน วัคซีน1 จำนวน 12', 240, '2018-09-20 13:41:56'),
-(109, '2018-09-21', 'ซื้อหวัดซีน วัคซีน2 จำนวน 10', 1000, '2018-09-20 17:15:31');
+(107, '2018-09-20', 'ซื้อหวัดซีน วัคซีนโรค จำนวน 14', 280, '2018-10-25 19:04:11'),
+(109, '2018-09-21', 'ซื้อหวัดซีน วัคซีนเสริม จำนวน 9', 900, '2018-10-25 16:03:50'),
+(115, '2018-10-26', 'ซื้อหวัดซีน วัคซีนโรคปากและเท้าเปื่อย จำนวน 10', 2300, '2018-10-25 20:00:30'),
+(116, '2018-10-26', 'ซื้อหวัดซีน วัคซีนที่1 จำนวน 5', 2500, '2018-10-26 10:46:53'),
+(117, '2018-10-30', 'ซื้อหวัดซีน วัคซีนลดไข้1 จำนวน 600', 3000, '2018-10-30 03:43:33'),
+(118, '2018-10-30', 'ซื้อหวัดซีน วัคซีนลดไข้ 2 จำนวน 5', 1500, '2018-10-30 09:43:46');
 
 -- --------------------------------------------------------
 
@@ -208,6 +219,24 @@ INSERT INTO `member` (`UserID`, `Username`, `Password`, `Name`, `Status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pf_amount`
+--
+
+CREATE TABLE `pf_amount` (
+  `id_an` int(11) NOT NULL,
+  `amount` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pf_amount`
+--
+
+INSERT INTO `pf_amount` (`id_an`, `amount`) VALUES
+(1, 55);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pf_buyvac`
 --
 
@@ -227,9 +256,13 @@ CREATE TABLE `pf_buyvac` (
 
 INSERT INTO `pf_buyvac` (`Id`, `id_buy`, `name`, `date_buy`, `amount`, `price`, `status`) VALUES
 (2, 101, 'วัคซีน2', '2018-09-20', 0, 120, 'หมด'),
-(3, 107, 'วัคซีน1', '2018-09-21', 11, 20, 'มี'),
-(4, 108, 'วัคซีน3', '2018-09-21', 7, 12, 'มี'),
-(5, 109, 'วัคซีน2', '2018-09-20', 9, 100, 'มี');
+(3, 107, 'วัคซีนโรค', '2018-09-21', 13, 20, 'มี'),
+(4, 108, 'วัคซีนลดไข้', '2018-09-21', 3, 125, 'มี'),
+(5, 109, 'วัคซีนเสริม', '2018-09-20', 5, 100, 'มี'),
+(9, 115, 'วัคซีนโรคปากและเท้าเปื่อย', '2018-10-26', 7, 230, 'มี'),
+(10, 116, 'วัคซีนที่1', '2018-10-26', 5, 500, 'มี'),
+(11, 117, 'วัคซีนลดไข้1', '2018-10-30', 600, 5, 'มี'),
+(12, 118, 'วัคซีนลดไข้ 2', '2018-10-29', 5, 100, 'มี');
 
 -- --------------------------------------------------------
 
@@ -255,7 +288,23 @@ INSERT INTO `pf_pig` (`Id`, `No`, `id_stall`, `id_typepig`, `bdate`, `status`) V
 (2, 2, 1, 1, '2018-09-29', 'ขายแล้ว'),
 (4, 111, 1, 1, '2018-09-21', 'ขายแล้ว'),
 (5, 123, 2, 2, '2018-09-13', 'ขายแล้ว'),
-(6, 1234, 1, 1, '2018-09-21', 'อยู่');
+(6, 1234, 1, 1, '2018-09-21', 'ขายแล้ว'),
+(7, 1, 4, 2, '2018-09-03', 'ขายแล้ว'),
+(8, 112, 2, 1, '2018-08-26', 'ขายแล้ว'),
+(9, 2, 4, 3, '2018-08-04', 'ขายแล้ว'),
+(10, 3, 4, 3, '2018-09-01', 'ขายแล้ว'),
+(11, 301, 4, 3, '2018-09-01', 'อยู่'),
+(12, 201, 2, 2, '2018-07-06', 'ขายแล้ว'),
+(13, 202, 2, 2, '2018-07-01', 'อยู่'),
+(14, 113, 1, 1, '2018-10-01', 'ขายแล้ว'),
+(15, 114, 1, 1, '2018-10-01', 'ขายแล้ว'),
+(16, 115, 1, 1, '2018-10-01', 'ขายแล้ว'),
+(17, 116, 1, 1, '2018-10-01', 'อยู่'),
+(18, 203, 2, 2, '2018-10-01', 'อยู่'),
+(19, 204, 2, 2, '2018-10-01', 'อยู่'),
+(20, 205, 2, 2, '2018-10-01', 'อยู่'),
+(21, 302, 3, 3, '2018-09-06', 'อยู่'),
+(22, 303, 3, 3, '2018-09-05', 'อยู่');
 
 -- --------------------------------------------------------
 
@@ -275,7 +324,9 @@ CREATE TABLE `pf_stall` (
 INSERT INTO `pf_stall` (`Id_sl`, `name_sl`) VALUES
 (1, 'คอก1'),
 (2, 'คอก2'),
-(3, 'คอก3');
+(3, 'คอก3'),
+(4, 'คอก4'),
+(5, 'คอก5');
 
 -- --------------------------------------------------------
 
@@ -293,8 +344,9 @@ CREATE TABLE `pf_typepig` (
 --
 
 INSERT INTO `pf_typepig` (`Id_tp`, `name_tp`) VALUES
-(1, 'แม่พัน'),
-(2, 'พ่อพัน');
+(1, 'แม่พันธุ์'),
+(2, 'พ่อพันธุ์'),
+(3, 'สุกรขุน');
 
 -- --------------------------------------------------------
 
@@ -325,7 +377,21 @@ INSERT INTO `pf_vaccine` (`Id`, `id_pig`, `id_vacbuy`, `date`) VALUES
 (9, 4, 5, '2018-09-21'),
 (10, 4, 4, '2018-09-22'),
 (11, 5, 4, '2018-09-21'),
-(12, 5, 4, '2018-09-27');
+(12, 5, 4, '2018-09-27'),
+(13, 6, 4, '2018-10-10'),
+(14, 9, 4, '2018-09-01'),
+(15, 8, 7, '2018-10-17'),
+(16, 7, 3, '2018-10-02'),
+(17, 8, 4, '2018-10-13'),
+(18, 8, 5, '2018-10-26'),
+(19, 13, 5, '2018-10-05'),
+(20, 12, 9, '2018-10-26'),
+(21, 15, 3, '2018-10-30'),
+(22, 16, 5, '2018-10-30'),
+(23, 20, 9, '2018-10-23'),
+(24, 22, 5, '2018-10-21'),
+(25, 15, 4, '2018-10-29'),
+(26, 14, 9, '2018-10-30');
 
 -- --------------------------------------------------------
 
@@ -346,7 +412,7 @@ CREATE TABLE `recieve` (
 --
 
 INSERT INTO `recieve` (`id`, `date`, `from`, `r_money`, `created_date`) VALUES
-(1, '2014-01-30', 'มีเงินอยู่', 540, '2014-02-04 17:59:26'),
+(30, '2018-10-26', 'ขายสุกร', 3000, '2018-10-26 12:54:49'),
 (2, '2014-02-01', 'กดเงินมา', 300, '2014-02-04 17:59:51'),
 (3, '2014-02-03', 'กดเงินมา', 200, '2014-02-04 18:00:14'),
 (4, '2014-02-05', 'กดเงินมา', 200, '2014-02-05 13:29:52'),
@@ -363,10 +429,23 @@ INSERT INTO `recieve` (`id`, `date`, `from`, `r_money`, `created_date`) VALUES
 (16, '2018-08-13', 'asdasdsad', 100, '2018-08-13 14:22:01'),
 (17, '2018-08-13', 'ขายหมา', 300, '2018-08-13 14:26:34'),
 (18, '2018-09-10', 'ซื้อขนม', 10, '2018-09-10 05:39:52'),
-(19, '2018-09-10', 'ซื้อม่ราา', 100, '2018-09-10 05:40:26'),
+(19, '2018-09-10', 'ซื้อม่ราา', 1000, '2018-09-10 05:40:26'),
 (20, '2018-09-13', 'ขายสุกรเลขที่ 2', 3000, '2018-09-13 18:30:05'),
-(28, '2018-09-21', 'ขายสุกรเลขที่ 111', 6600, '2018-09-20 17:55:22'),
-(29, '2018-09-21', 'ขายสุกรเลขที่ 123', 6600, '2018-09-20 17:59:26');
+(28, '2018-09-21', 'ขายสุกรเลขที่ 111', 8000, '2018-09-20 17:55:22'),
+(29, '2018-09-21', 'ขายสุกรเลขที่ 123', 6600, '2018-09-20 17:59:26'),
+(31, '2018-10-26', 'ขายหมู', 20000, '2018-10-26 01:33:42'),
+(32, '2018-10-26', 'ขายสุกรเลขที่ 1234', 5500, '2018-10-26 01:59:08'),
+(33, '2018-10-26', 'ขายสุกรเลขที่ 3', 5500, '2018-10-26 01:59:54'),
+(34, '2018-10-26', 'ขายสุกรเลขที่ 1', 4000, '2018-10-26 02:01:02'),
+(35, '2018-10-28', 'ขายสุกรเลขที่ 112', 5490, '2018-10-28 02:53:47'),
+(36, '2018-10-28', 'ขายสุกรเลขที่ 2', 4505, '2018-10-28 03:23:11'),
+(37, '2018-10-28', 'ขายสุกรเลขที่ 201', 348, '2018-10-28 08:46:49'),
+(38, '2018-10-30', 'ขายหมู', 5000, '2018-10-30 03:40:52'),
+(39, '2018-10-30', 'ขายหมู', 2500, '2018-10-30 04:14:09'),
+(40, '2018-10-30', 'ขายสุกรเลขที่ 113', 3190, '2018-10-30 04:22:51'),
+(41, '2018-10-30', 'ขายสุกรเลขที่ 114', 6670, '2018-10-30 04:23:49'),
+(42, '2018-10-30', 'ขายสุกรเลขที่ 115', 2915, '2018-10-30 04:24:24'),
+(43, '2018-10-30', 'ขายหมู', 2500, '2018-10-30 04:43:19');
 
 -- --------------------------------------------------------
 
@@ -385,9 +464,8 @@ CREATE TABLE `td_about` (
 --
 
 INSERT INTO `td_about` (`Id`, `Topic`, `Description`) VALUES
-(1, 'หัวข้อ', 'รายละเอียด'),
-(2, 'หัวข้อ2', 'รายละเอียด2'),
-(3, 'หัวข้อ22', 'ละเอียด//');
+(2, 'สินค้าของฟาร์ม', 'ลูกหมู อายุ 1 เดือน\r\nหมูขุน'),
+(3, 'ที่ตั้งฟาร์มสุกรลักษมี', 'ตั้งอยู่ที่ เลขที่ 130 หมู่ 2 ตำบลวาใหญ่ อำเภออากาศอำนวย จังหวัดสกลนคร 47170');
 
 -- --------------------------------------------------------
 
@@ -402,6 +480,14 @@ CREATE TABLE `td_contect` (
   `phone` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `td_contect`
+--
+
+INSERT INTO `td_contect` (`Id`, `name`, `email`, `phone`, `message`) VALUES
+(1, 'สิริรัตน์  คำเกาะ', 'sirirat.kh58@snru.ac.th', '0844172967', 'มีลูกหมูขายกี่ตัว'),
+(2, 'พิมพ์ชนก', 'pimchanok.su58@snru.ac.th', '0615809943', 'อยากซื้อสุกร 3 ตัว');
 
 -- --------------------------------------------------------
 
@@ -420,7 +506,7 @@ CREATE TABLE `td_service` (
 --
 
 INSERT INTO `td_service` (`Id`, `Topic`, `Description`) VALUES
-(3, 'service', 'detail service');
+(3, 'บริการขายสุกร', 'ซื้อลูกสุกรวันนี้  บริการจับให้ฟรี ');
 
 -- --------------------------------------------------------
 
@@ -443,9 +529,8 @@ CREATE TABLE `td_team` (
 --
 
 INSERT INTO `td_team` (`Id`, `name`, `position`, `facebook`, `twitter`, `rss`, `pic_file`) VALUES
-(2, 'name122', 'position122', 'facebook22', 'twitter22', 'rss22', '37293500_2121795891398520_2020020138325049344_n.jpg'),
-(3, 'name3222', 'position3222', '', '', '', 'Capture.PNG'),
-(4, 'name sername', 'position', 'https://www.facebook.com', 'https://www.twitter.com', '', 'DSC_0155_Cover.jpg');
+(4, 'เอี่ยมวิลัย  คำเกาะ', 'ผู้ให้อาหารสุกร', 'https://www.facebook.com/kib.sirirat', 'https://www.twitter.com', '', '55555.jpg'),
+(5, 'ลักษมี  อ่อนอำพันธุ์', 'เจ้าชองฟาร์ม', 'https://www.facebook.com/kib.sirirat', '', '', '000.jpg');
 
 --
 -- Indexes for dumped tables
@@ -475,6 +560,12 @@ ALTER TABLE `buy`
 ALTER TABLE `member`
   ADD PRIMARY KEY (`UserID`),
   ADD UNIQUE KEY `Username` (`Username`);
+
+--
+-- Indexes for table `pf_amount`
+--
+ALTER TABLE `pf_amount`
+  ADD PRIMARY KEY (`id_an`);
 
 --
 -- Indexes for table `pf_buyvac`
@@ -544,87 +635,77 @@ ALTER TABLE `td_team`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `id_act` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
+  MODIFY `id_act` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `act_photo`
 --
 ALTER TABLE `act_photo`
-  MODIFY `id_photo` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
+  MODIFY `id_photo` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `buy`
 --
 ALTER TABLE `buy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
   MODIFY `UserID` int(3) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+--
+-- AUTO_INCREMENT for table `pf_amount`
+--
+ALTER TABLE `pf_amount`
+  MODIFY `id_an` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `pf_buyvac`
 --
 ALTER TABLE `pf_buyvac`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `pf_pig`
 --
 ALTER TABLE `pf_pig`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `pf_stall`
 --
 ALTER TABLE `pf_stall`
-  MODIFY `Id_sl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `Id_sl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `pf_typepig`
 --
 ALTER TABLE `pf_typepig`
   MODIFY `Id_tp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `pf_vaccine`
 --
 ALTER TABLE `pf_vaccine`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `recieve`
 --
 ALTER TABLE `recieve`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `td_about`
 --
 ALTER TABLE `td_about`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `td_contect`
 --
 ALTER TABLE `td_contect`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `td_service`
 --
 ALTER TABLE `td_service`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `td_team`
 --
 ALTER TABLE `td_team`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
-
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

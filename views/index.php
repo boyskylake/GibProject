@@ -31,7 +31,7 @@ session_unset();
 							<div class="banner-w3lstext">
 								<!--<h3>สไลด์โชว์1</h3>
 								<p>ภาพสไลด์โชว์1</p>-->
-								<img src="../images/h1.jpg" width="100">
+								<img src="../images/h1.jpg">
 							</div>
 						</li>
 						<li>
