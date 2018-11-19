@@ -15,25 +15,29 @@
 								echo "<li><a href='index.php' class='btn w3ls-hover active'>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover'>กิจกรรม</a></li>
-									<li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>";
+                                    <li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>
+                                    <li><a href='admin' class='btn w3ls-hover'>เข้าสู่ระบบ</a></li>";
 							}
 							elseif ($_SESSION['pages'] == '/views/about.php') {
 								echo "<li><a href='index.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover active'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover'>กิจกรรม</a></li>
-									<li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>";
+                                    <li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>
+                                    <li><a href='admin' class='btn w3ls-hover'>เข้าสู่ระบบ</a></li>";
 							}
 							elseif ($_SESSION['pages'] == '/views/activity.php') {
 								echo "<li><a href='index.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover active'>กิจกรรม</a></li>
-									<li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>";
+                                    <li><a href='contact.php' class='btn w3ls-hover'>ติดต่อเรา</a></li>
+                                    <li><a href='admin' class='btn w3ls-hover'>เข้าสู่ระบบ</a></li>";
 							}
 							elseif ($_SESSION['pages'] == '/views/contact.php') {
 								echo "<li><a href='index.php' class='btn w3ls-hover '>หน้าแรก</a></li>
 									<li><a href='about.php' class='btn w3ls-hover'>เกี่ยวกับเรา</a></li>   
 									<li><a href='activity.php' class='btn w3ls-hover'>กิจกรรม</a></li>
-									<li><a href='contact.php' class='btn w3ls-hover active'>ติดต่อเรา</a></li>";
+                                    <li><a href='contact.php' class='btn w3ls-hover active'>ติดต่อเรา</a></li>
+                                    <li><a href='admin' class='btn w3ls-hover'>เข้าสู่ระบบ</a></li>";
 							}
 
 							 ?>
